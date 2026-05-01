@@ -1,0 +1,3 @@
+interface:
+  display_name: Engineering Governance
+  short_description: Senior-engineer review gate for no-op, minimal-diff, and anti-drift coding decisions.
