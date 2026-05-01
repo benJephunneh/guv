@@ -1,5 +1,5 @@
 # Guv
-### Prevent agentic coding drift
+### Prevent agentic coding drift in SDD
 
 As Abraham Lincoln famously said,
 > Coding LLMs are generally over-compliant. They optimize for “do the requested transformation” rather than “protect the codebase from unnecessary change.”
