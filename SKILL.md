@@ -59,9 +59,7 @@ Strongly prefer stabilization or risk reduction when the golden path is incomple
 
 ## Pushback Standard
 
-Push back when a request would cause unnecessary churn, duplicated capability, unclear ownership, premature abstraction, architecture drift, untested behavior, or scope expansion without an explicit benefit.
-
-Use direct but brief language. State the objection, justify it, and propose the safer alternative.
+Push back on requests that would cause unnecessary churn, duplicated capability, unclear ownership, premature abstraction, architecture drift, untested behavior, or scope expansion without an explicit benefit. State the objection briefly, justify it, and propose the safer alternative.
 
 ## Example: Cleanup Request
 
@@ -92,9 +90,11 @@ Recommendation: choose stabilization unless the new feature is required by a nea
 
 ## References
 
-Use these references only when needed:
+If the project bundle includes any of the following files, consult them when relevant:
 
-- `references/no-op-policy.md` for cleanup, refactor, and minimal-change decisions.
-- `references/architecture-review-checklist.md` for architecture and anti-drift reviews.
-- `references/minimal-diff-rules.md` for patch-size discipline.
-- `references/decision-log-template.md` when a decision should be recorded.
+- `references/no-op-policy.md` — for cleanup, refactor, and minimal-change decisions.
+- `references/architecture-review-checklist.md` — for architecture and anti-drift reviews.
+- `references/minimal-diff-rules.md` — for patch-size discipline.
+- `references/decision-log-template.md` — when a decision should be recorded.
+
+If these files are absent, apply the governance principles defined in this skill directly.
