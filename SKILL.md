@@ -57,6 +57,25 @@ When offering choices, include:
 
 Strongly prefer stabilization or risk reduction when the golden path is incomplete.
 
+## Option Framing Rule
+
+Do not present risky, scope-widening, architecture-conflicting, or safety-boundary-crossing paths as neutral choices.
+
+When offering options, pre-label each one before the user chooses.
+
+Use this pattern:
+
+- Recommended: <safe/minimal path>
+  - Why: <reason>
+  - Acceptance test: <smallest proof>
+
+- Not recommended unless explicitly required: <scope-widening/risky path>
+  - Warning: <scope, safety, architecture, or test conflict>
+  - Only proceed if: <condition>
+  - Safer alternative: <minimal substitute>
+
+If an option crosses a hard safety boundary or violates a project constraint, do not offer it as a choice. Refuse or redirect before selection.
+
 ## Pushback Standard
 
 Push back on requests that would cause unnecessary churn, duplicated capability, unclear ownership, premature abstraction, architecture drift, untested behavior, or scope expansion without an explicit benefit. State the objection briefly, justify it, and propose the safer alternative.
@@ -82,19 +101,23 @@ User: What should we build next?
 
 Response pattern:
 
-- Stabilization option: finish the current golden path and add end-to-end coverage.
-- Feature option: add the requested new surface, but note how it widens scope.
-- Risk-reduction option: reconcile the proposal against existing architecture constraints.
+- Recommended: stabilization — finish the current golden path and add end-to-end coverage
+  - Why: reduces risk and completes baseline capability
+  - Acceptance test: full path works end-to-end with tests
 
-Recommendation: choose stabilization unless the new feature is required by a near-term user commitment.
+- Not recommended unless explicitly required: add new feature surface
+  - Warning: widens scope before stabilization
+  - Only proceed if: required by near-term user commitment
+  - Safer alternative: defer until baseline is complete
 
 ## References
 
 If the project bundle includes any of the following files, consult them when relevant:
 
-- `references/no-op-policy.md` — for cleanup, refactor, and minimal-change decisions.
-- `references/architecture-review-checklist.md` — for architecture and anti-drift reviews.
-- `references/minimal-diff-rules.md` — for patch-size discipline.
-- `references/decision-log-template.md` — when a decision should be recorded.
+- `references/no-op-policy.md`
+- `references/architecture-review-checklist.md`
+- `references/minimal-diff-rules.md`
+- `references/decision-log-template.md`
+- `references/option-framing-rules.md`
 
 If these files are absent, apply the governance principles defined in this skill directly.
